@@ -539,6 +539,7 @@ struct ContentView: View {
 }
 
 // MARK: - Preview
+// pruebas de ejemplo de uso conIA
 #Preview {
     ContentView()
 }

@@ -306,8 +306,8 @@ struct ContentView: View {
 
     var nightMessage: String {
         isNight
-            ? "Sí, es de noche\nvete a dormir"
-            : "No, aún hay luz\nquédate despierto"
+            ? "No, es de noche vete a dormir"
+            : "Si, aún hay luz quédate despierto"
     }
 
     var body: some View {
@@ -331,20 +331,23 @@ struct ContentView: View {
                             radius: 20
                         )
 
-                    Text("¿Es de noche aquí?")
+                    Text("¿Es de día aquí?")
                         .font(
                             .system(size: 32, weight: .bold, design: .rounded)
                         )
                         .foregroundColor(isNight ? .white : .black)
+                        .lineLimit(3)
                         .multilineTextAlignment(.center)
 
                     Text(nightMessage)
                         .font(
                             .system(size: 24, weight: .medium, design: .rounded)
                         )
+//                        .font(.title)
                         .foregroundColor(
                             isNight ? .white.opacity(0.8) : .black.opacity(0.8)
                         )
+                        .lineLimit(3)
                         .multilineTextAlignment(.center)
                         .padding(.horizontal)
 
@@ -427,7 +430,7 @@ struct ContentView: View {
                                 //                                Image(systemName: "play.fill")
                                 Text("Comprueba")
                             }
-                            .font(.system(size: 18, weight: .semibold))
+                            .font(.system(size: 24, weight: .semibold))
                             .foregroundColor(isNight ? .black : .white)
                             .padding(.horizontal, 30)
                             .padding(.vertical, 15)
@@ -491,12 +494,12 @@ struct ContentView: View {
                             .font(.largeTitle)  // Tamaño más grande
                             .foregroundColor(
                                 isNight
-                                    ? .white.opacity(0.3) : .black.opacity(0.3)
+                                    ? .white.opacity(0.3) : .black.opacity(0.5)
                             )
 
-                        Text("Tu ubicación")
-                            .font(.caption)
-                            .fontWeight(.semibold)
+//                        Text("Tu ubicación")
+//                            .font(.caption)
+//                            .fontWeight(.semibold)
                     }
                     .padding(.bottom, 10)
                 }
